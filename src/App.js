@@ -1,10 +1,12 @@
 import './App.css';
 import Banner from './components/Banner/Banner';
+import Programs from './components/Programs/Programs';
 
 function App() {
   return (
     <div className="App">
-      <span style={{color: 'white'}}><Banner /></span>
+      <Banner />
+      <Programs />
     </div>
   );
 }
