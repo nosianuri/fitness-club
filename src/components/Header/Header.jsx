@@ -25,7 +25,7 @@ const Header = () => {
         <ul className='header-menu'>
           <li><Link
             onClick={() => setMenuOpened(false)}
-            to='testimonials'
+            to='home'
             span={true}
             smooth={true}
             >Home</Link></li>
