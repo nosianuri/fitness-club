@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../Header/Header';
 import './Banner.css';
 import banner_image from "../../assets/hero_image.png";
@@ -6,24 +6,54 @@ import banner_image_back from "../../assets/hero_image_back.png";
 import Heart from "../../assets/heart.png";
 import Calories from "../../assets/calories.png";
 import NumberCounter from "number-counter";
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import app from '../../firebase.init';
+
+
+const auth = getAuth(app);
 
 const Banner = () => {
-    const transition = {type: 'spring', duration: 3};
-    const mobile = window.innerWidth<=768 ? true: false;
-    
+    const [user, setUser] = useState({});
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                const user = result.user;
+                setUser(user);
+                console.log(user);
+            })
+            .catch(error => {
+                console.error('error', error);
+            })
+    }
+
+    const handleSignOut = () => {
+        signOut(auth)
+            .then(() => {
+                setUser({});
+            })
+            .catch(error => {
+                setUser({});
+            })
+    };
+
+    const transition = { type: 'spring', duration: 3 };
+    const mobile = window.innerWidth <= 768 ? true : false;
+
     return (
         <div className='banner' id='home'>
 
-        <div className='blur banner-blur'></div>
+            <div className='blur banner-blur'></div>
             <div className='left-h'>
                 <Header />
                 {/* the best ad */}
                 <div className='the-best-ad'>
                     <motion.div
-                    initial={{left: mobile? "165px": '238px' }}
-                    whileInView={{left: '8px'}}
-                    transition={{...transition, type: 'tween'}}
+                        initial={{ left: mobile ? "165px" : '238px' }}
+                        whileInView={{ left: '8px' }}
+                        transition={{ ...transition, type: 'tween' }}
                     ></motion.div>
                     <span>the best fitness club in the town</span>
                 </div>
@@ -52,13 +82,13 @@ const Banner = () => {
                     </div>
                     <div>
                         <span>
-                        <NumberCounter end={978} start={800} delay='4' preFix="+" />
+                            <NumberCounter end={978} start={800} delay='4' preFix="+" />
                         </span>
                         <span>members joined</span>
                     </div>
                     <div>
                         <span>
-                        <NumberCounter end={50} start={0} delay='4' preFix="+" />
+                            <NumberCounter end={50} start={0} delay='4' preFix="+" />
                         </span>
                         <span>fitness programs</span>
                     </div>
@@ -70,13 +100,12 @@ const Banner = () => {
                 </div>
             </div>
             <div className='right-h'>
-                <button className='btn'>Join Now</button>
-
+                {user.email ? <button onClick={handleSignOut} className='btn'>Sign Out {user?.displayName}</button> : <button onClick={handleGoogleSignIn} className='btn'>Join Now</button>}
                 <motion.div
-                initial={{right: "-1rem"}}
-                whileInView={{right: "4rem"}}
-                transition={transition}
-                 className='heart-rate'>
+                    initial={{ right: "-1rem" }}
+                    whileInView={{ right: "4rem" }}
+                    transition={transition}
+                    className='heart-rate'>
                     <img src={Heart} alt="" />
                     <span>Heart Rate</span>
                     <span>116 bpm</span>
@@ -84,20 +113,20 @@ const Banner = () => {
                 {/* banner images */}
                 <img className='banner-image' src={banner_image} alt="" />
                 <motion.img
-                initial={{right: '11rem'}}
-                whileInView={{right: '20rem'}}
-                transition={transition}
-                 className='banner-image-back' src={banner_image_back} alt="" />
+                    initial={{ right: '11rem' }}
+                    whileInView={{ right: '20rem' }}
+                    transition={transition}
+                    className='banner-image-back' src={banner_image_back} alt="" />
                 {/* calories */}
                 <motion.div
-                initial={{right: "37rem"}}
-                whileInView={{right: "28rem"}}
-                transition={transition}
-                 className='calories'>
+                    initial={{ right: "37rem" }}
+                    whileInView={{ right: "28rem" }}
+                    transition={transition}
+                    className='calories'>
                     <img src={Calories} alt="" />
                     <div>
-                    <span>Calories Burned</span>
-                    <span>220 kcal</span>
+                        <span>Calories Burned</span>
+                        <span>220 kcal</span>
                     </div>
                 </motion.div>
             </div>
