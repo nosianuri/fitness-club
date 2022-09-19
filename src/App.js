@@ -1,24 +1,19 @@
-import './App.css';
-import Banner from './components/Banner/Banner';
-import Footer from './components/Footer/Footer';
-import Join from './components/Join/Join';
-import Plans from './components/Plans/Plans';
-import Programs from './components/Programs/Programs';
-import Reasons from './components/Reasons/Reasons';
-import Testimonials from './components/Testimonials/Testimonials';
-import auth from './firebase.init';
-
+import React from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import Hero from './components/Hero';
+import Cards from './components/Cards';
+import Facts from './components/Facts';
+import Features from './components/Features';
 
 function App() {
   return (
-    <div className="App">
-      <Banner />
-      <Programs />
-      <Reasons />
-      <Plans />
-      <Testimonials />
-      <Join />
-      <Footer />
+    <div className='overflow-hidden'>
+      <Hero />
+      <Cards />
+      <Facts />
+      <Features />
+      <div className='h-[2000px]'></div>
     </div>
   );
 }
