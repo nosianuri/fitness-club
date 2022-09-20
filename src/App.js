@@ -8,6 +8,8 @@ import Features from './components/Features';
 import Courses from './components/Courses';
 import Pricing from './components/Pricing';
 import Newsletter from './components/Newsletter';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
       <Courses />
       <Pricing />
       <Newsletter />
+      <Contact />
+      <Footer />
       <div className='h-[2000px]'></div>
     </div>
   );
