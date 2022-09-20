@@ -20,10 +20,11 @@ const Pricing = () => {
                   ? 'bg-orange text-white'
                   : 'bg-white text-heading'
                   } text-center pt-[70px] pb-[34px] border-b border-stroke-3 transition`}>
-                    <div className='text-[24px] font-medium mb-[10px]'>{title}</div>
-                  </div>
-                <div>
-                  <p>Discover your favourite class!</p>
+                  <div className='text-[24px] font-medium mb-[10px]'>{title}</div>
+                  <div className='text-[34px] font-semibold'>{price}</div>
+                </div>
+                <div className='px-[30px] pt-[18px] pb-[30px]'>
+                  <p className='text-center mb-6 text-sm'>Discover your favorite class!</p>
                   <ul className='flex flex-col gap-3 mb-10'>
                     {list.map((item, index) => {
                       const { icon, name } = item;
@@ -36,7 +37,12 @@ const Pricing = () => {
                       );
                     })}
                   </ul>
-                  <button>button</button>
+                  <div className='absolute bottom-[30px] w-full left-0 right-0 px-[30px]'>
+                    <button className={`${index === currentIndex
+                      ? 'bg-orange text-white' : 'border-orange'} w-full h-[50px] rounded border border-orange flex items-center justify-center text-orange font-medium transition relative`}>{buttonText}
+                      <div className={`${index === currentIndex ? 'bg-orange-200' : 'bg-orange'} w-[50px] h-[50px] flex justify-center items-center absolute right-0 rounded text-white`}>{buttonIcon}</div>
+                    </button>
+                  </div>
                 </div>
               </div>
             );
