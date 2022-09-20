@@ -12,6 +12,11 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
+  Aos.init({
+    duration: 1800,
+    offset: 100,
+  });
+  
   return (
     <div className='overflow-hidden'>
       <Hero />
@@ -23,7 +28,6 @@ function App() {
       <Newsletter />
       <Contact />
       <Footer />
-      <div className='h-[2000px]'></div>
     </div>
   );
 }
