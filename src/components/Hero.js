@@ -1,7 +1,6 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 import Image from '../assets/hero/guy.png';
-import Header from './Header';
 
 const Hero = () => {
   return <section className='min-h-[618px] lg:min-h-[815px] pt-9 lg:bg-circle lg:bg-no-repeat lg:bg-right-top'>

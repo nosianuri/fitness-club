@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Header from './components/Header';
 import NotFound from './Pages/NotFound/NotFound.jsx';
 import Footer from './components/Footer.js';
+import Gym from './Pages/Gym/Gym.jsx';
 
 function App() {
   Aos.init({
@@ -21,23 +22,13 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/gallery' element={<Gallery></Gallery>}></Route>
-
+        <Route path='/gym' element={<Gym />}></Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer />
       </div>
     </>
-    // <div className='overflow-hidden'>
-    //   <Hero />
-    //   <Cards />
-    //   <Facts />
-    //   <Features />
-    //   <Courses />
-    //   <Pricing />
-    //   <Newsletter />
-    //   <Contact />
-    //   <Footer />
-    // </div>
+    
   );
 }
 

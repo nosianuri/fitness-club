@@ -61,6 +61,8 @@ module.exports = {
         cardsBg: "url('/src/assets/cards/bg.png')",
         video: "url('/src/assets/video/video.png')",
         contact: "url('/src/assets/contact/bg.png')",
+        banner: "url('/src/assets/banner/bg.png')",
+        faq: "url('/src/assets/faq/bg.svg')",
       },
       boxShadow: {
         primary: '0px 18px 36px rgba(0, 0, 0, 0.05)',

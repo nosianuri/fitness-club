@@ -9,6 +9,7 @@ import Features from './Features';
 import Hero from './Hero';
 import Newsletter from './Newsletter';
 import Pricing from './Pricing';
+import Workouts from './Workouts';
     
 
 function Home() {
@@ -22,6 +23,7 @@ function Home() {
                 <Hero />
                 <Cards />
                 <Facts />
+                <Workouts />
                 <Features />
                 <Courses />
                 <Pricing />
