@@ -6,7 +6,7 @@ import Header from './Header';
 const Hero = () => {
   return <section className='min-h-[618px] lg:min-h-[815px] pt-9 lg:bg-circle lg:bg-no-repeat lg:bg-right-top'>
     <div className='container mx-auto'>
-      <Header />
+      {/* <Header /> */}
       <div className='flex flex-col items-center lg:flex-row lg:items-start pt-32'>
         <div className='flex-1 lg:mt-12'>
           <h1 className='h1 mb-3 lg:mb-[22px]' data-aos='fade-down' data-aos-delay='500' >

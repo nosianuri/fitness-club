@@ -18,16 +18,28 @@ const Gallary = () => {
             imgSrc: 'https://i.ibb.co/3r0DxHB/image3.png',
         },
         {
-            id: 3,
+            id: 4,
             imgSrc: 'https://i.ibb.co/BZMMynv/image4.png',
         },
         {
-            id: 3,
+            id: 5,
             imgSrc: 'https://i.ibb.co/zSmDnnP/hero-image.png',
         },
         {
-            id: 3,
+            id: 6,
             imgSrc: 'https://i.ibb.co/nPqycgb/banner.png',
+        },
+        {
+            id: 7,
+            imgSrc: 'https://i.ibb.co/dQtQS4Q/martial-arts2.jpg',
+        },
+        {
+            id: 8,
+            imgSrc: 'https://i.ibb.co/j4zLQ6K/Martial-Arts1.jpg',
+        },
+        {
+            id: 9,
+            imgSrc: 'https://i.ibb.co/MfvsNwp/yoga.jpg',
         },
     ];
 
@@ -43,7 +55,8 @@ const Gallary = () => {
         <>
             <div className={model ? "model open" : "model"}>
                 <img src={tempimgSrc} alt="" />
-                <CloseIcon onClick={() => setModel(false)} />
+                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg> */}
+                <CloseIcon  onClick={() => setModel(false)} />
             </div>
 
             <div className='gallery'>

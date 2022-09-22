@@ -9,11 +9,11 @@ import CourseImage3 from '../src/assets/courses/course-3.png';
 export const navigation = [
   {
     name: 'Home',
-    href: '#',
+    href: '/',
   },
   {
-    name: 'Classes',
-    href: '#',
+    name: 'Gallery',
+    href: '/gallery',
   },
   {
     name: 'Features',
