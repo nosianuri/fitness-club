@@ -6,7 +6,6 @@ import Contact from './Contact';
 import Courses from './Courses';
 import Facts from './Facts';
 import Features from './Features';
-import Footer from './Footer';
 import Hero from './Hero';
 import Newsletter from './Newsletter';
 import Pricing from './Pricing';
@@ -28,7 +27,7 @@ function Home() {
                 <Pricing />
                 <Newsletter />
                 <Contact />
-                <Footer />
+                
             </div>
         </>
     )
