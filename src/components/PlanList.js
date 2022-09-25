@@ -22,7 +22,7 @@ const PlanList = ({ plans }) => {
             <div
               className={`${
                 currentIndex === index
-                  ? 'bg-neutral-500 text-white'
+                  ? 'bg-neutral-500 text-orange'
                   : 'bg-neutral-400/10 text-neutral-500'
               } flex justify-center items-center py-[40px] px-[30px] lg:min-h-[550px] transition duration-100`}
             >
@@ -59,7 +59,6 @@ const PlanList = ({ plans }) => {
                           key={idx}
                         >
                           <div>
-                          {/* <svg className='text-lg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> */}
                             <BsCheckCircleFill className='text-lg' important />
                           </div>
                           <div>{item.name}</div>
@@ -71,7 +70,7 @@ const PlanList = ({ plans }) => {
                   <button
                     className={`${
                       currentIndex === index
-                        ? 'bg-white text-neutral-500'
+                        ? ' text-neutral-500'
                         : 'border border-neutral-500'
                     } btn btn-lg rounded-[1px] lg:mx-auto`}
                   >
